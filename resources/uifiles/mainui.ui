@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>960</width>
+    <height>640</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="m_LagrangeBtn">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>10</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>拉格朗日插值算法</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="m_ClearBtn">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>590</y>
+     <width>161</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>清除</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>m_LagrangeBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>onLagrange()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>832</x>
+     <y>42</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>846</x>
+     <y>71</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_ClearBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>onClearDraw()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>878</x>
+     <y>609</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>893</x>
+     <y>547</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onClearDraw()</slot>
+  <slot>onLagrange()</slot>
+ </slots>
+</ui>
