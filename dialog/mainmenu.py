@@ -7,6 +7,7 @@ from PyQt5.QtGui import QPainter, QColor, QBrush, QPen, QIcon
 from PyQt5.QtCore import Qt, QTimer
 
 FRAME_CNT = 30 
+DRAW_SPEED = 200
 
 class CMainUI(mainui.Ui_Form, QWidget):
 	DRAW_RECT = (10, 10, 760, 620)
@@ -37,12 +38,11 @@ class CMainUI(mainui.Ui_Form, QWidget):
 		self.m_Calc = lagrange.Lagrange
 		self.AwakeDraw()
 
-
-
 	def AwakeDraw(self):
 		self.m_IsDrawLine = True
 		self.m_CurX = 0
 		self.m_AccTime = 0
+		self.m_Lines = []
 
 		self.m_Timer = QTimer(self)
 		self.m_Timer.timeout.connect(self.onLoopDraw)
@@ -121,7 +121,7 @@ class CMainUI(mainui.Ui_Form, QWidget):
 	def onLoopDraw(self):
 		if not self.m_IsDrawLine:
 			return
-		self.m_AccTime += 1.0 / FRAME_CNT * 100
+		self.m_AccTime += 1.0 / FRAME_CNT * DRAW_SPEED
 		if self.m_AccTime >= self.DRAW_RECT[2]:
 			self.m_Timer.stop()
 			self.m_Timer = None
