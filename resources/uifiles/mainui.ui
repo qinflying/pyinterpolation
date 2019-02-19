@@ -11,34 +11,88 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>插值与拟合演示</string>
   </property>
-  <widget class="QPushButton" name="m_LagrangeBtn">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
      <x>790</x>
-     <y>10</y>
+     <y>0</y>
      <width>161</width>
-     <height>41</height>
+     <height>631</height>
     </rect>
    </property>
-   <property name="text">
-    <string>拉格朗日插值算法</string>
-   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>5</number>
+    </property>
+    <property name="topMargin">
+     <number>15</number>
+    </property>
+    <property name="rightMargin">
+     <number>5</number>
+    </property>
+    <property name="bottomMargin">
+     <number>15</number>
+    </property>
+    <item>
+     <widget class="QPushButton" name="m_LagrangeBtn">
+      <property name="minimumSize">
+       <size>
+        <width>150</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>拉格朗日插值算法</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="m_NewtonBtn">
+      <property name="minimumSize">
+       <size>
+        <width>150</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>牛顿插值算法</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>148</width>
+        <height>506</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QPushButton" name="m_ClearBtn">
+      <property name="minimumSize">
+       <size>
+        <width>150</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>清除</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
-  <widget class="QPushButton" name="m_ClearBtn">
-   <property name="geometry">
-    <rect>
-     <x>790</x>
-     <y>590</y>
-     <width>161</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>清除</string>
-   </property>
-  </widget>
+  <zorder></zorder>
+  <zorder>verticalSpacer</zorder>
+  <zorder>m_LagrangeBtn</zorder>
+  <zorder>m_ClearBtn</zorder>
  </widget>
  <resources/>
  <connections>
@@ -49,12 +103,12 @@
    <slot>onLagrange()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>832</x>
-     <y>42</y>
+     <x>855</x>
+     <y>41</y>
     </hint>
     <hint type="destinationlabel">
-     <x>846</x>
-     <y>71</y>
+     <x>693</x>
+     <y>108</y>
     </hint>
    </hints>
   </connection>
@@ -65,12 +119,28 @@
    <slot>onClearDraw()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>878</x>
-     <y>609</y>
+     <x>879</x>
+     <y>588</y>
     </hint>
     <hint type="destinationlabel">
-     <x>893</x>
-     <y>547</y>
+     <x>694</x>
+     <y>531</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>m_NewtonBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>onNewton()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>881</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>692</x>
+     <y>171</y>
     </hint>
    </hints>
   </connection>
@@ -78,5 +148,6 @@
  <slots>
   <slot>onClearDraw()</slot>
   <slot>onLagrange()</slot>
+  <slot>onNewton()</slot>
  </slots>
 </ui>
