@@ -35,7 +35,7 @@ class CMainUI(mainui.Ui_Form, QWidget):
 	def onLagrange(self):
 		print("onLagrange")
 		from algorithms import lagrange
-		self.m_Calc = lagrange.Lagrange
+		self.m_Calc = lagrange.Lagrange(self.m_MapPoints[:])
 		self.AwakeDraw()
 
 	def AwakeDraw(self):
@@ -51,7 +51,13 @@ class CMainUI(mainui.Ui_Form, QWidget):
 	def onNewton(self):
 		print("onNewton")
 		from algorithms import newton
-		self.m_Calc = newton.Newton
+		self.m_Calc = newton.Newton(self.m_MapPoints[:])
+		self.AwakeDraw()
+
+	def onHermite(self):
+		print("onHermite")
+		from algorithms import hermite
+		self.m_Calc = hermite.NormalHermite(self.m_MapPoints[:])
 		self.AwakeDraw()
 		
 	def onClearDraw(self):
@@ -126,7 +132,7 @@ class CMainUI(mainui.Ui_Form, QWidget):
 			self.m_Timer.stop()
 			self.m_Timer = None
 		x = self.m_AccTime
-		y = self.m_Calc(self.m_MapPoints, x)
+		y = self.m_Calc(x)
 		self.m_Lines.append((x, 640 - y))
 		self.update()
 

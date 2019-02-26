@@ -12,13 +12,15 @@ def CalChaShang(n, lPoints):
 		f += temp 
 	return f
 
-def Newton(lPoints, x):
-	result = 0 
+def Newton(lPoints):
 	iLen = len(lPoints)
-	for idx in range(iLen):
-		temp = 1 
-		f = CalChaShang(idx, lPoints)
-		for i in range(idx):
-			temp = temp * (x - lPoints[i][0])
-		result += f * temp
-	return result
+	def innerNewton(x):
+		result = 0 
+		for idx in range(iLen):
+			temp = 1 
+			f = CalChaShang(idx, lPoints)
+			for i in range(idx):
+				temp = temp * (x - lPoints[i][0])
+			result += f * temp
+		return result
+	return innerNewton

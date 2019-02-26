@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>插值与拟合演示</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>790</x>
@@ -44,7 +44,7 @@
        </size>
       </property>
       <property name="text">
-       <string>拉格朗日插值算法</string>
+       <string>拉格朗日插值(Lagrange)</string>
       </property>
      </widget>
     </item>
@@ -57,7 +57,20 @@
        </size>
       </property>
       <property name="text">
-       <string>牛顿插值算法</string>
+       <string>牛顿插值(Newton)</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="m_HermiteBtn">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>40</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>埃尔米特插值(Hermite)</string>
       </property>
      </widget>
     </item>
@@ -89,10 +102,6 @@
     </item>
    </layout>
   </widget>
-  <zorder></zorder>
-  <zorder>verticalSpacer</zorder>
-  <zorder>m_LagrangeBtn</zorder>
-  <zorder>m_ClearBtn</zorder>
  </widget>
  <resources/>
  <connections>
@@ -144,10 +153,27 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>m_HermiteBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>onHermite()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>833</x>
+     <y>136</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>690</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>onClearDraw()</slot>
   <slot>onLagrange()</slot>
   <slot>onNewton()</slot>
+  <slot>onHermite()</slot>
  </slots>
 </ui>
