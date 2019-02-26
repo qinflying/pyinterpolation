@@ -28,3 +28,5 @@ if __name__ == "__main__":
 			Run()
 		elif sCmd == '9':
 			Ui2Py()
+	else:
+		Run()
