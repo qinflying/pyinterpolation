@@ -2,14 +2,14 @@
 #-*- coding:utf-8 -*-
 
 from uicode import mainui
-from PyQt5.QtWidgets import QWidget, QApplication
+from PyQt5.QtWidgets import QWidget, QApplication, QMainWindow
 from PyQt5.QtGui import QPainter, QColor, QBrush, QPen, QIcon
 from PyQt5.QtCore import Qt, QTimer
 
 FRAME_CNT = 30 
 DRAW_SPEED = 200
 
-class CMainUI(mainui.Ui_Form, QWidget):
+class CMainUI(mainui.Ui_Form, QMainWindow):
 	DRAW_EDGE_X = 10 
 	DRAW_EDGE_Y = 10
 	DRAW_W = 760

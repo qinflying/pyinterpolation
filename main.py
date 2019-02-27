@@ -5,8 +5,6 @@ import sys
 def Run():
 	from PyQt5.QtWidgets import QApplication, QWidget
 	from PyQt5.QtCore import QCoreApplication
-	print("test")
-
 	app = QApplication(sys.argv)
 
 
